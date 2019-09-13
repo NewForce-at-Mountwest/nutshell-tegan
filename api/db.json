@@ -2,13 +2,11 @@
     "users": [
     {
     "id": 1,
-    "userId": 1,
     "name": "user1",
     "email": "email1"
     },
     {
     "id": 2,
-    "userId": 2,
     "name": "user2",
     "email": "email2"
     }
