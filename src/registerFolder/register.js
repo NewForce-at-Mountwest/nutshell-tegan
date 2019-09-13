@@ -38,7 +38,7 @@ postNewUser: newUserObject => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(newUserObject)
-  })
+  });
 }
 
 };

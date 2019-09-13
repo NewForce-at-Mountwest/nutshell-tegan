@@ -1,4 +1,6 @@
 import registerObject from "../registerFolder/register.js"
+
+// -----------BEGIN REGISTRATION CODE------------------//
 // add registration form to dom
 registerObject.printRegisterHTML();
 
@@ -17,8 +19,13 @@ const registerNewUserObject = {
 }
 // console.log(registerNewUserObject)
 // POST new user to database
-registerObject.postNewUser(registerNewUserObject);
- }
+registerObject.postNewUser(registerNewUserObject)
+.then(() => {
+    document.querySelector("#register-username-input").value = "";
+    document.querySelector("#register-email-input").value = "";
+})
+}
 });
+// ------------------END REGISTRATION CODE----------------//
 
 

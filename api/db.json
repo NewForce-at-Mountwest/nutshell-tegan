@@ -2,23 +2,28 @@
   "users": [
     {
       "id": 1,
-      "name": "user1",
-      "email": "email1"
+      "name": "Johnny",
+      "email": "email@gmail.com"
     },
     {
       "id": 2,
-      "name": "user2",
-      "email": "email2"
+      "name": "Joshua",
+      "email": "josh@gmail.com"
     },
     {
       "name": "jess",
-      "email": "email",
+      "email": "email@gmail.com",
       "id": 3
     },
     {
       "name": "ryan122",
       "email": "ryan122@gmail.com",
       "id": 4
+    },
+    {
+      "name": "Sponge Bob",
+      "email": "sponge1@gmail.com",
+      "id": 5
     }
   ],
   "friends": [
