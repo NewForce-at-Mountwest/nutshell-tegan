@@ -1,4 +1,5 @@
 import registerObject from "../registerFolder/register.js"
+import messagesObject from "../messagesFolder/message.js"
 
 // -----------BEGIN REGISTRATION CODE------------------//
 // add registration form to dom
@@ -29,3 +30,7 @@ registerObject.postNewUser(registerNewUserObject)
 // ------------------END REGISTRATION CODE----------------//
 
 
+// -------------------BEGIN MESSAGES CODE------------------//
+messagesObject.getAllMessages()
+
+messagesObject.printNewMessageFormToHTML()

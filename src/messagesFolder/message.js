@@ -20,15 +20,30 @@
 
 const messagesObject = {
 
-    // Method to print message form.
-    printMessagesHTML: () => {
+    // // Method to print message form for new messages.
+    printNewMessageFormToHTML: () => {
 
-    document.querySelector("#login-container").innerHTML = `
-    <section id="register-account-container">
-    <div>Register New Account</div>
-    <input id="register-username-input" type="text" placeholder="Type username here">
-    <input id="register-email-input" type="text" placeholder="Type email here">
-    <button id="register-save-btn">Submit</button>
+    document.querySelector("#chat-container").innerHTML = `
+    <section id="new-message-container">
+    <div>Enter New Message</div>
+    <input id="message-text-input" type="text" placeholder="Type new message here">
+    <button id="message-save-btn">Submit</button>
     </section>
     `
     },
+    buildSingleMessage: (singleMessage) => {
+      return `
+        <section id="message-card">
+        <div>Message History</div>
+        <p>${singleMessage.userId}:${singleMessage.message}</p>
+        </section>
+        `
+    },
+    getAllMessages: () => {
+        return fetch("http://localhost:8088/messages")
+        .then(response => response.json());
+    }
+
+
+};
+export default messagesObject;
