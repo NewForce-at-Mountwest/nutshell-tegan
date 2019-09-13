@@ -1,46 +1,53 @@
 {
-    "users": [
+  "users": [
     {
-    "id": 1,
-    "userId": 1,
-    "name": "user1",
-    "email": "email1"
+      "id": 1,
+      "name": "user1",
+      "email": "email1"
     },
     {
-    "id": 2,
-    "userId": 2,
-    "name": "user2",
-    "email": "email2"
+      "id": 2,
+      "name": "user2",
+      "email": "email2"
     }
-    ],
-    "friends": [
+  ],
+  "friends": [
     {
-    "id": 1,
-    "userId": 1,
-    "otherFriendId": 2
+      "id": 1,
+      "userId": 1,
+      "otherFriendId": 2
     }
-    ],
-    "messages": [
+  ],
+  "messages": [
     {
-    "id": 1,
-    "userId": 1,
-    "message": "Levi is the coolest person I know."
+      "id": 1,
+      "userId": 1,
+      "message": "Levi is the coolest person I know."
     }
-    ],
-    "tasks": [
+  ],
+  "tasks": [
     {
-    "id": 1,
-    "userId": 1,
-    "task": "Give Levi a dollar."
+      "id": 1,
+      "userId": 1,
+      "task": "Give Levi a dollar."
     }
-    ],
-    "news": [
+  ],
+  "news": [
     {
-    "id": 1,
-    "userId": 1,
-    "url": "News Link 1",
-    "title": "News Title 1",
-    "synopsis": "News Synopsis 1"
+      "id": 1,
+      "userId": 1,
+      "url": "News Link 1",
+      "title": "News Title 1",
+      "synopsis": "News Synopsis 1"
     }
-    ]
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "location": "Huntington",
+      "date": "9/20/19",
+      "name": "Give Levi your car keys."
     }
+  ]
+}
