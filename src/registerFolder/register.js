@@ -1,3 +1,4 @@
+// Jessica Ayerst(author)
 // a user wants to use Nutshell
 // When the user first accesses the application
 // Then the user should see a welcome message
