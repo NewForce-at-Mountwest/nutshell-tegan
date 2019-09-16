@@ -1,9 +1,10 @@
 // Building the log on function for the splash page//
-import buildLogin from "./buildLoginDom"
+import buildLogin from "./loginDomPrint"
 import clickEventLogin from "./clickEventLogin"
+
 
 const loginPage = () => {
     buildLogin.loginForm();
-    buildLoginLoginButton();
+    buildLogin.loginButton();
 }
 export default loginPage

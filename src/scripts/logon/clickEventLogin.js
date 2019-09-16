@@ -1,7 +1,7 @@
 const clickEventLogin = {
     handleLogin: () => {
-        document.querySelector("#login-container")("click", () => {
-            if (event.target.id === "login") {
+        document.querySelector("body")("click", () => {
+            if (event.target.id === "loginBTN") {
                 const userNameVal = document.querySelector("#userName").value
                 const userPasswordVal = document.querySelector("#password").value
                 console.log(userNameVal)
@@ -12,7 +12,7 @@ const clickEventLogin = {
                         console.log(password)
                         console.log(passwordVal)
                     })
-                if (password.lenght < 1) {
+                if (password.length < 1) {
                     alert("USERNAME/PASSWORD AIN'T REAL MY GUY")
                 } else if (password[0].password === userPasswordVal) {
                     console.log("Good Job My Guy YEET!")
@@ -24,3 +24,4 @@ const clickEventLogin = {
         })
     }
 }
+export default clickEventLogin

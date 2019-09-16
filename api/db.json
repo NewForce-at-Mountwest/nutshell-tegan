@@ -23,6 +23,11 @@
             "name": "Sponge Bob",
             "email": "sponge1@gmail.com",
             "id": 5
+        },
+        {
+            "name": "kyle",
+            "email": "1234@1234",
+            "id": 6
         }
     ],
     "friends": [{
