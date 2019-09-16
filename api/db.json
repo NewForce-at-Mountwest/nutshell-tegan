@@ -60,5 +60,13 @@
       "title": "News Title 1",
       "synopsis": "News Synopsis 1"
     }
+  ],
+  "events": [
+    {
+      "name": "Give Levi your car keys.",
+      "date": "2019-09-16",
+      "location": "Huntington",
+      "id": 1
+    }
   ]
 }
