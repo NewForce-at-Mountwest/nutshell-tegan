@@ -1,5 +1,5 @@
 const newsApiManager = {
-  // Method to get all students
+  // Method to get all news articles
   getAllNews: () => {
     return fetch("http://localhost:8088/news")
       .then(response => response.json())
