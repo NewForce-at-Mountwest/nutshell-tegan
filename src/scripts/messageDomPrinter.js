@@ -19,6 +19,18 @@ const messageDomPrinter = {
         // add HTML String to Dom
         document.querySelector("#chat-container").innerHTML += messageHTMLString;
     },
+    printMessageEditForm: (messageObjectToEdit) => {
+        const targetCard = document.querySelector(`#message-card-${messageObjectToEdit.id}`)
+
+        targetCard.innerHTML =
+        `
+        <section id="new-message-container">
+        <div>Edit Message Here:</div>
+        <input id="message-text-${messageObjectToEdit.id}" type="text" placeholder="Type edited message here">
+        <button id="editedmessage-save-btn-${messageObjectToEdit.id}">Submit</button>
+        </section>
+        `
+    }
 }
 
 export default messageDomPrinter

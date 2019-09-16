@@ -40,9 +40,19 @@
       "message": "Levi is the coolest person I know."
     },
     {
-      "id": 2,
-      "userId": 3,
-      "message": "Jessi is the coolest, not Levi!"
+      "userId": 1,
+      "message": "Hello World!",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "message": "It's Me!!",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "message": "Where's Scooby Doo at today??",
+      "id": 4
     }
   ],
   "tasks": [
