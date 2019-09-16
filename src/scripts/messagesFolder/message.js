@@ -18,6 +18,7 @@
 // Then the user should be able to change the text of their message
 // And have an affordance for saving the edited message
 
+
 const messagesObject = {
 
     // // Method to print message form for new messages.
@@ -31,14 +32,7 @@ const messagesObject = {
     </section>
     `
     },
-    buildSingleMessage: (singleMessage) => {
-      return `
-        <section id="message-card">
-        <div>Message History</div>
-        <p>${singleMessage.userId}:${singleMessage.message}</p>
-        </section>
-        `
-    },
+
     getAllMessages: () => {
         return fetch("http://localhost:8088/messages")
         .then(response => response.json());

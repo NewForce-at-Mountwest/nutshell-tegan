@@ -1,6 +1,35 @@
 
 import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
+import registerObject from "./registerFolder/register.js";
+import messagesObject from "./messagesFolder/message.js.js";
+// import messageDomPrinter from "../messagesFolder/messageDomPrinter.js";
+
+
+// ---------BEGIN REGISTRATION FORM CODE----//
+registerObject.printRegisterHTML();
+
+// Add click event to registration save button//
+document.querySelector("body").addEventListener("click", () =>{
+ if(event.target.id === "register-save-btn"){
+// get value of input fields
+const newUsernameValue = document.querySelector("#register-username-input").value;
+const newEmailValue = document.querySelector("#register-email-input").value;
+// create new object with values from input fields//
+const registerNewUserObject = {
+    name: newUsernameValue,
+    email: newEmailValue
+}
+// post new registered user to json server by calling method and then clear the input fields//
+registerObject.postNewUser(registerNewUserObject)
+.then(() => {
+    document.querySelector("#register-username-input").value = "";
+    document.querySelector("#register-email-input").value = "";
+})
+}
+});
+// -------END REGISTRATION FORM CODE------///
+
 
   eventApiManager.getAllEvents().then(parsedEvent => {
   eventDomPrinter.printEventsToDOM(parsedEvent);
@@ -63,38 +92,6 @@ document.querySelector("body").addEventListener("click", () => {
   }
 });
 
-
-
-
-
-import registerObject from "../registerFolder/register.js"
-import messagesObject from "../messagesFolder/message.js"
-
-registerObject.printRegisterHTML();
-
-
-document.querySelector("body").addEventListener("click", () =>{
- if(event.target.id === "register-save-btn"){
-
-const newUsernameValue = document.querySelector("#register-username-input").value;
-const newEmailValue = document.querySelector("#register-email-input").value;
-const registerNewUserObject = {
-    name: newUsernameValue,
-    email: newEmailValue
-}
-registerObject.postNewUser(registerNewUserObject)
-.then(() => {
-    document.querySelector("#register-username-input").value = "";
-    document.querySelector("#register-email-input").value = "";
-})
-}
-});
-
-
-// -------------------BEGIN MESSAGES CODE------------------//
-messagesObject.getAllMessages()
-
-messagesObject.printNewMessageFormToHTML()
 //edit button
 
 document.querySelector("body").addEventListener("click", () => {
@@ -160,4 +157,11 @@ document.querySelector("body").addEventListener("click", () => {
           })
       })
   }
-})
+});
+
+
+// -------------------BEGIN MESSAGES CODE------------------//
+messagesObject.printNewMessageFormToHTML();
+
+
+// ----------END MESSAGES CODE-------------------//
