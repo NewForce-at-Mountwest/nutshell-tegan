@@ -1,9 +1,10 @@
 
 import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
-import registerObject from "./registerFolder/register.js";
-import messagesObject from "./messagesFolder/message.js.js";
-// import messageDomPrinter from "../messagesFolder/messageDomPrinter.js";
+import registerObject from "./register.js";
+import messagesDomPrinter from "./messageDomPrinter.js";
+import messageApiManager from "./messageApiManager.js";
+
 
 
 // ---------BEGIN REGISTRATION FORM CODE----//
@@ -161,7 +162,27 @@ document.querySelector("body").addEventListener("click", () => {
 
 
 // -------------------BEGIN MESSAGES CODE------------------//
-messagesObject.printNewMessageFormToHTML();
+// print new message form to dom
+messagesDomPrinter.printNewMessageFormToHTML();
+// print old messages to dom
+messageApiManager.getAllMessages().then(parsedMessages => {
+  // loop through the messages from json server
+  parsedMessages.forEach(message => {
+    messagesDomPrinter.printSingleMessage(message)
+  })
+});
+
+// collect form input values
+// use doc.querySel to select input filed
+// use value property on inputs to get text that you typed
+// document.querySelector("#message-save-btn").addEventListener("click", function() {
+//   const messageInput = document.querySelector("#message-text-input").value;
+
+
+//   const newMessage = {
+//     text: messageInput
+//   }
+// })
 
 
 // ----------END MESSAGES CODE-------------------//
