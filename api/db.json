@@ -1,59 +1,4 @@
 {
-<<<<<<< HEAD
-    "users": [{
-            "id": 1,
-            "name": "Johnny",
-            "email": "email@gmail.com"
-        },
-        {
-            "id": 2,
-            "name": "Joshua",
-            "email": "josh@gmail.com"
-        },
-        {
-            "name": "jess",
-            "email": "email@gmail.com",
-            "id": 3
-        },
-        {
-            "name": "ryan122",
-            "email": "ryan122@gmail.com",
-            "id": 4
-        },
-        {
-            "name": "Sponge Bob",
-            "email": "sponge1@gmail.com",
-            "id": 5
-        },
-        {
-            "name": "kyle",
-            "email": "1234@1234",
-            "id": 6
-        }
-    ],
-    "friends": [{
-        "id": 1,
-        "userId": 1,
-        "otherFriendId": 2
-    }],
-    "messages": [{
-        "id": 1,
-        "userId": 1,
-        "message": "Levi is the coolest person I know."
-    }],
-    "tasks": [{
-        "id": 1,
-        "userId": 1,
-        "task": "Give Levi a dollar."
-    }],
-    "news": [{
-        "id": 1,
-        "userId": 1,
-        "url": "News Link 1",
-        "title": "News Title 1",
-        "synopsis": "News Synopsis 1"
-    }]
-=======
   "users": [
     {
       "id": 1,
@@ -111,13 +56,5 @@
       "synopsis": "News Synopsis 1"
     }
   ],
-  "events": [
-    {
-      "name": "Give Levi your car keys.",
-      "date": "2019-09-16",
-      "location": "Huntington",
-      "id": 1
-    }
-  ]
->>>>>>> master
+  "events": []
 }
