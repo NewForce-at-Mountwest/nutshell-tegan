@@ -1,12 +1,78 @@
-import newsApiManager from "./news/newsApiManager.js"
+import newsApiManager from "./news/newsApiManager.js";
 import newsDomPrinter from "./news/newsDomPrinter.js";
-import registerObject from "../registerFolder/register.js"
+import eventApiManager from "./eventApiManager.js";
+import eventDomPrinter from "./eventDomPrinter.js";
+import registerObject from "../registerFolder/register.js";
 
-// -----------BEGIN REGISTRATION CODE------------------//
-// add registration form to dom
+  eventApiManager.getAllEvents().then(parsedEvent => {
+  eventDomPrinter.printEventsToDOM(parsedEvent);
+});
+
+//listen for click on post button
+
+document.querySelector("body").addEventListener("click", () => {
+  if (event.target.id.includes("event-create-submit")) {
+
+  const eventNameInput = document.querySelector("#event-create-name").value;
+  const eventDateInput = document.querySelector("#event-create-date").value;
+  const eventLocationInput = document.querySelector("#event-create-location").value;
+
+//create object to post
+
+  const eventToPost = {
+    name: eventNameInput,
+    date: eventDateInput,
+    location: eventLocationInput
+  };
+
+//posting request
+
+  eventApiManager
+    .postOneEvent(eventToPost)
+    .then(eventApiManager.getAllEvents)
+    .then(parsedEvent => {
+
+      //re print the events
+      eventDomPrinter.printEventsToDOM(parsedEvent);
+    });
+}
+});
+
+//delete button
+
+document.querySelector("body").addEventListener("click", () => {
+
+//see if clicked on a delete button
+
+  if (event.target.id.includes("event-delete")) {
+
+    // find the id of the selected delete button
+
+    const wordArray = event.target.id.split("-");
+    const eventIdToDelete = wordArray[2];
+
+    //delete request
+
+    eventApiManager.deleteOneEvent(eventIdToDelete).then(() => {
+      eventApiManager.getAllEvents()
+      .then(parsedEvents => {
+
+//re print the events
+
+        eventDomPrinter.printEventsToDOM(parsedEvents);
+      });
+    });
+  }
+});
+
+
+
+
+
+
+
 registerObject.printRegisterHTML();
 
-// ------click event for registration save button------
 
 document.querySelector("body").addEventListener("click", () => {
     if (event.target.id === "register-save-btn") {
@@ -28,7 +94,75 @@ document.querySelector("body").addEventListener("click", () => {
             })
     }
 });
-// ------------------END REGISTRATION CODE----------------//
+
+
+
+
+document.querySelector("body").addEventListener("click", () => {
+
+  //see if clicked on an edit button
+
+  if(event.target.id.includes("event-edit")){
+      const wordArray = event.target.id.split("-");
+      const eventIdToEdit = wordArray[2];
+
+//get the info from selected event
+
+      eventApiManager.getOneEvent(eventIdToEdit)
+      .then(singleEvent => {
+
+//print input field for editing event
+
+          eventDomPrinter.printEventEditForm(singleEvent)
+
+
+      })
+
+  }
+})
+
+//edit save button
+
+document.querySelector("body").addEventListener("click", () => {
+
+//make sure button is an event save button
+
+  if(event.target.id.includes("event-save-edit")){
+
+//get button id
+
+      const wordArray = event.target.id.split("-");
+      const eventIdToEdit = wordArray[3];
+
+//get the edited input value
+
+      const eventNameInputValue = document.querySelector(`#event-name-edit-input-${eventIdToEdit}`).value
+      const eventDateInputValue = document.querySelector(`#event-date-edit-input-${eventIdToEdit}`).value
+      const eventLocationInputValue = document.querySelector(`#event-location-edit-input-${eventIdToEdit}`).value
+
+//create an object to make put request
+
+      const editedEventObject = {
+          name: eventNameInputValue,
+          date: eventDateInputValue,
+          location: eventLocationInputValue
+      }
+
+      //create put reqeust
+
+      eventApiManager.editOneEvent(eventIdToEdit, editedEventObject)
+      .then(() => {
+          eventApiManager.getAllEvents()
+          .then(allEvents => {
+
+            //re print all the events
+
+              eventDomPrinter.printEventsToDOM(allEvents)
+          })
+      })
+  }
+})
+
 //--------------NEWS-----------------------//
 //Fetches all news entries from JSON and prints them to the DOM
 newsApiManager.getAllNews().then(parsedNews => {
@@ -64,9 +198,7 @@ newsSaveButton.addEventListener("click", function () {
                 newsDomPrinter.printNewsToDOM(parsedNews);
             });
     }
-},
-
-);
+});
 
 //-----------Editing News Articles to the Database-------------//
 
@@ -98,116 +230,7 @@ document.querySelector("body").addEventListener("click", () => {
                     .then(parsedNews => {
                         newsDomPrinter.printNewsToDOM(parsedNews)
                     })
-    },
-
-
-
-newsApiManager.printNewsEditForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // ------- CLICK EVENT FOR DELETE BUTTONS ----------//
-// // Add an event listener to the body element because the delete buttons are loaded dynamically-- they don't exist on page load!
-// document.querySelector("body").addEventListener("click", () => {
-//     // If the user clicks on a delete button, do some stuff
-//     if (event.target.id.includes("delete-student")) {
-//         // get the unique id of the person you want to delete
-//         // remember that we gave our delete buttons id attributes of delete-student-uniqueId
-//         const wordArray = event.target.id.split("-");
-//         const idOfThingWeWantToDelete = wordArray[2];
-//         console.log(idOfThingWeWantToDelete);
-
-//         // Make a DELETE request to our json-server
-//         apiManager.deleteOneStudent(idOfThingWeWantToDelete).then(() => {
-//             // Once the delete is completed, get all the students-- we need to "refresh" the page (kind of)
-//             apiManager.getAllStudents()
-//                 .then(parsedStudents => {
-//                     // When the students come back, print them to the DOM again
-//                     domPrinter.printStudentsToDOM(parsedStudents);
-//                 });
-//         });
-//     }
-// });
-
-// newsApiManager.getOneStudent(newsId)
-
-// // ------ EDIT EVENT LISTENERS ------//
-// // Event listener for edit button
-// document.querySelector("body").addEventListener("click", () => {
-//     if (event.target.id.includes("edit-news")) {
-//         // Get the id of the thing we want to edit from the button's id attribute
-//         const wordArray = event.target.id.split("-");
-//         const currentNewsId = wordArray[2];
-
-
-//         // Pass that id into our apiManager to bring back the student we want to edit
-//         apiManager.getOneStudent(currentNewsId)
-//             .then(singleStudent => {
-//                 domPrinter.printStudentEditForm(singleStudent)
-
-
-//             })
-
-//     }
-// })
-
-
-// // Event listener for submit button
-
-// document.querySelector("body").addEventListener("click", () => {
-//     if (event.target.id.includes("save-edit")) {
-//         // Get the id of the thing we want to edit
-//         const wordArray = event.target.id.split("-");
-//         const idOfThingWeWantToEdit = wordArray[2];
-//         console.log(idOfThingWeWantToEdit);
-
-//         // Get the value of the input
-//         const editedInputValue = document.querySelector(`#edit-input-${idOfThingWeWantToEdit}`).value
-
-
-//         // Put the input value into an object
-//         const editedStudentObj = {
-//             name: editedInputValue
-//         }
-
-//         console.log("this is what we're going to send to the db", editedStudentObj)
-//         // Send to database w/ PUT method
-//         apiManager.editOneStudent(idOfThingWeWantToEdit, editedStudentObj)
-//             .then(() => {
-//                 apiManager.getAllStudents()
-//                     .then(allStudents => {
-//                         domPrinter.printStudentsToDOM(allStudents)
-//                     })
-//             })
-
-
-
-//         // Once the PUT is complete, GET all the students from the db
-//         // Once they students come back from the db, print them to the DOM
-
-//     }
-// })
-
-
-
+                })
+            }
+        }
+)

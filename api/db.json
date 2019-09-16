@@ -139,5 +139,13 @@
       "url": "https://www.huffpost.com/entry/felicity-huffman-sentence-college-scandal_n_5d76bed8e4b0fde50c2b7e0d",
       "id": 15
     }
+  ],
+  "events": [
+    {
+      "name": "Give Levi your car keys.",
+      "date": "2019-09-16",
+      "location": "Huntington",
+      "id": 1
+    }
   ]
 }
