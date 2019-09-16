@@ -58,11 +58,10 @@
   ],
   "events": [
     {
-      "id": 1,
-      "userId": 1,
+      "name": "Give Levi your car keys.",
+      "date": "2019-09-16",
       "location": "Huntington",
-      "date": "9/20/19",
-      "name": "Give Levi your car keys."
+      "id": 1
     }
   ]
 }
