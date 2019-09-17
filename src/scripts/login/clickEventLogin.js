@@ -2,6 +2,8 @@ import loginApiManager from "./loginApiManager.js"
 import buildLogin from "./loginDomPrint.js"
 import loginPage from "./login.js"
 import afterLoad from "../tasks/loadTaskContent.js"
+import messageApiManager from "../messageApiManager.js"
+import messagesDomPrinter from "../messageDomPrinter.js"
 
 
 
@@ -21,11 +23,24 @@ const clickEventLogin = {
                             alert("USERNAME/PASSWORD AIN'T REAL MY GUY")
                         } else if (password[0].password === userPasswordVal) {
                             console.log("Good Job My Guy YEET!")
-                            sessionStorage.setItem("userId", password[0])
+                            sessionStorage.setItem("userId", password[0].id)
                             document.querySelector("#login-container").innerHTML = ""
-                                // call functions for everyone else
+                            // call functions for everyone else
                             afterLoad()
+<<<<<<< HEAD
                            }
+=======
+                            // print new message form to dom
+                            messagesDomPrinter.printNewMessageFormToHTML();
+                            // print old messages to dom
+                            messageApiManager.getAllMessages().then(parsedMessages => {
+                                // loop through the messages from json server
+                                parsedMessages.forEach(message => {
+                                    messagesDomPrinter.printSingleMessage(message)
+                                })
+                            });
+                        }
+>>>>>>> master
                     })
 
             }

@@ -6,16 +6,59 @@ import addClick from "./tasks/taskClickEvents.js";
 import clickEventLogin from "./login/clickEventLogin.js";
 import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
-// import registerObject from "../registerFolder/register.js";
 
 
-//-------------EVENTS--------------------//
 
-eventApiManager.getAllEvents().then(parsedEvent => {
-  eventDomPrinter.printEventsToDOM(parsedEvent);
-  eventApiManager.getAllEvents().then(parsedEvent => {
-    eventDomPrinter.printEventsToDOM(parsedEvent);
-  });
+
+
+
+
+import loginPage from "./login/login.js"
+import addClick from "./tasks/taskClickEvents.js"
+import clickEventLogin from "./login/clickEventLogin.js"
+import friendActivator from "./friends/friendActivator.js";
+
+
+import eventApiManager from "./eventApiManager.js";
+import eventDomPrinter from "./eventDomPrinter.js";
+import registerObject from "./register.js";
+import messagesDomPrinter from "./messageDomPrinter.js";
+import messageApiManager from "./messageApiManager.js";
+import messageDomPrinter from "./messageDomPrinter.js";
+
+
+
+// ---------BEGIN REGISTRATION FORM CODE----//
+
+registerObject.printRegisterHTML();
+
+
+document.querySelector("body").addEventListener("click", () => {
+    if (event.target.id === "register-save-btn") {
+
+        // get the value of the username and email inputs
+        const newUsernameValue = document.querySelector("#register-username-input").value;
+        const newEmailValue = document.querySelector("#register-email-input").value;
+        const newUserPass = document.querySelector("#register-password-input").value
+            // Put input values into a new object
+        const registerNewUserObject = {
+                name: newUsernameValue,
+                email: newEmailValue,
+                password: newUserPass,
+            }
+            // console.log(registerNewUserObject)
+            // POST new user to database
+        registerObject.postNewUser(registerNewUserObject)
+            .then(() => {
+                document.querySelector("#register-username-input").value = "";
+                document.querySelector("#register-email-input").value = "";
+                document.querySelector("#register-password-input").value = "";
+            })
+    }
+});
+// ------------------END REGISTRATION CODE----------------//
+
+
 
   // login handler
   loginPage();
@@ -28,7 +71,9 @@ eventApiManager.getAllEvents().then(parsedEvent => {
 
 
 
-  //listen for click on post button
+
+//-------------EVENTS--------------------//
+//listen for click on post button
 
   document.querySelector("body").addEventListener("click", () => {
     if (event.target.id.includes("event-create-submit")) {
@@ -117,7 +162,7 @@ eventApiManager.getAllEvents().then(parsedEvent => {
         });
     });
   })
-});
+;
 
 
 
@@ -190,6 +235,7 @@ const registerNewUserObject = {
 
 
 
+//edit button
 
 document.querySelector("body").addEventListener("click", () => {
 
@@ -433,3 +479,104 @@ document.querySelector("body").addEventListener("click", () => {
           })
         })
       eventDomPrinter.printEventsToDOM(allEvents)
+              eventDomPrinter.printEventsToDOM(allEvents);
+
+
+
+              
+// -------------------BEGIN MESSAGES/CHAT CODE------------------//
+
+
+// collect form input values to create a new message in database
+// use doc.querySel to select input filed
+// use value property on inputs to get text that you typed
+document.querySelector("body").addEventListener("click", () => {
+    if(event.target.id === "message-save-btn"){
+    const messageInput = document.querySelector("#message-text-input").value;
+
+    const newMessage = {
+    userId: sessionStorage.getItem("userId"),
+    message: messageInput,
+    };
+    //   using POST method to create new json data
+// fetch to create the new message in the api
+messageApiManager.saveMessage(newMessage)
+.then(messageApiManager.getAllMessages)
+.then(parsedMessages => {
+    document.querySelector("#chat-container").innerHTML = ""
+    messageDomPrinter.printNewMessageFormToHTML()
+    // loop through messages from json server
+    parsedMessages.forEach(message => {
+        messageDomPrinter.printSingleMessage(message)
+    });
+    });
+    }
+})
+
+// click event for delete button
+// add event listener to the body element bc the delete button does not exist upon page load
+document.querySelector("body").addEventListener("click", () => {
+    // if user clicks on delete button, then things happen
+    if(event.target.id.includes("delete-message")) {
+        // get the unique id of the entry you want to delete
+        // remember that we gave our delete buttons id attributes of delete-message-uniqueId
+        const wordArray = event.target.id.split("-");
+        const idOfThingWeWantToDelete = wordArray[2];
+        console.log(idOfThingWeWantToDelete);
+        // make a DELETE request to our json server
+        messageApiManager.deleteOneMessage(idOfThingWeWantToDelete).then(() => {
+            // once the delete is completed, get all messages again
+            messageApiManager.getAllMessages().then(parsedMessages => {
+                document.querySelector("#chat-container").innerHTML = ""
+                messageDomPrinter.printNewMessageFormToHTML()
+                parsedMessages.forEach(message => {
+                    messageDomPrinter.printSingleMessage(message)
+                });
+            });
+        })
+    }
+})
+
+// event listener for edit button
+document.querySelector("body").addEventListener("click", () => {
+    if(event.target.id.includes("edit-message")){
+        const wordArray = event.target.id.split("-");
+        const idOfThingWeWantToEdit = wordArray[2];
+        console.log(idOfThingWeWantToEdit)
+
+        // pass that id into the Apimanager to bring back the message we want to edit
+        messageApiManager.getOneMessage(idOfThingWeWantToEdit).then(singleMessage => {
+            messageDomPrinter.printMessageEditForm(singleMessage)
+        })
+    }
+});
+
+// event listener for the edit save button
+document.querySelector("body").addEventListener("click", () => {
+    if(event.target.id.includes("editedmessage-save")){
+        const wordArray = event.target.id.split("-");
+        const idOfThingWeWantToEdit = wordArray[3];
+        console.log(idOfThingWeWantToEdit);
+        // get the value of the input
+        const editedMessageValue = document.querySelector(`#message-text-${idOfThingWeWantToEdit}`).value
+        // put the input value into an object
+        const editedMessageObject = {
+            userId: 1,
+            message: editedMessageValue
+        }
+        // send to the db with the PUT method
+        messageApiManager.editOneMessage(idOfThingWeWantToEdit, editedMessageObject).then(() => {
+            // once the edit is completed, get all messages again
+            messageApiManager.getAllMessages().then(parsedMessages => {
+                document.querySelector("#chat-container").innerHTML = ""
+                messageDomPrinter.printNewMessageFormToHTML()
+                // loop through the messages from json server
+                parsedMessages.forEach(message => {
+                    messageDomPrinter.printSingleMessage(message)
+                });
+            });
+        })
+    }
+})
+
+// ----------END MESSAGES/CHAT CODE-------------------//
