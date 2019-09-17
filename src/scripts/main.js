@@ -20,7 +20,8 @@ document.querySelector("body").addEventListener("click", () => {
   const eventToPost = {
     name: eventNameInput,
     date: eventDateInput,
-    location: eventLocationInput
+    location: eventLocationInput,
+    userId: 1
   };
 
 //posting request
@@ -133,13 +134,13 @@ document.querySelector("body").addEventListener("click", () => {
       const eventNameInputValue = document.querySelector(`#event-name-edit-input-${eventIdToEdit}`).value
       const eventDateInputValue = document.querySelector(`#event-date-edit-input-${eventIdToEdit}`).value
       const eventLocationInputValue = document.querySelector(`#event-location-edit-input-${eventIdToEdit}`).value
-
 //create an object to make put request
 
       const editedEventObject = {
           name: eventNameInputValue,
           date: eventDateInputValue,
-          location: eventLocationInputValue
+          location: eventLocationInputValue,
+          userId: 1
       }
 
       //create put reqeust

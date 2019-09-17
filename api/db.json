@@ -59,9 +59,24 @@
   "events": [
     {
       "name": "Give Levi your car keys.",
+      "userId": 1,
       "date": "2019-09-16",
       "location": "Huntington",
       "id": 1
+    },
+    {
+      "name": "tell levi how cool he is.",
+      "userId": 2,
+      "date": "2019-09-16",
+      "location": "Huntington",
+      "id": 2
+    },
+    {
+      "name": "userid1",
+      "date": "2019-09-17",
+      "location": "huntington",
+      "userId": 1,
+      "id": 4
     }
   ]
 }
