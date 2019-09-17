@@ -5,6 +5,7 @@ const messageDomPrinter = {
      printNewMessageFormToHTML: () => {
 
         document.querySelector("#chat-container").innerHTML = `
+        <h2>Messages</h2>
         <section id="new-message-container">
         <div>Enter New Message</div>
         <input id="message-text-input" type="text" placeholder="Type new message here">
@@ -17,6 +18,7 @@ const messageDomPrinter = {
         const messageHTMLString = messageHtmlBuilder.buildSingleMessage(singleMessage)
 
         // add HTML String to Dom
+
         document.querySelector("#chat-container").innerHTML += messageHTMLString;
     },
     printMessageEditForm: (messageObjectToEdit) => {

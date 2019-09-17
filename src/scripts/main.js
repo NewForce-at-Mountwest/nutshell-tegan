@@ -190,6 +190,7 @@ messageApiManager.saveMessage(newMessage)
 .then(messageApiManager.getAllMessages)
 .then(parsedMessages => {
     document.querySelector("#chat-container").innerHTML = ""
+    messageDomPrinter.printNewMessageFormToHTML()
     // loop through messages from json server
     parsedMessages.forEach(message => {
         messageDomPrinter.printSingleMessage(message)
@@ -213,6 +214,7 @@ document.querySelector("body").addEventListener("click", () => {
             // once the delete is completed, get all messages again
             messageApiManager.getAllMessages().then(parsedMessages => {
                 document.querySelector("#chat-container").innerHTML = ""
+                messageDomPrinter.printNewMessageFormToHTML()
                 parsedMessages.forEach(message => {
                     messageDomPrinter.printSingleMessage(message)
                 });
@@ -253,6 +255,7 @@ document.querySelector("body").addEventListener("click", () => {
             // once the edit is completed, get all messages again
             messageApiManager.getAllMessages().then(parsedMessages => {
                 document.querySelector("#chat-container").innerHTML = ""
+                messageDomPrinter.printNewMessageFormToHTML()
                 // loop through the messages from json server
                 parsedMessages.forEach(message => {
                     messageDomPrinter.printSingleMessage(message)

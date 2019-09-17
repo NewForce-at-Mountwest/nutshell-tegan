@@ -35,14 +35,9 @@
   ],
   "messages": [
     {
-      "id": 1,
       "userId": 1,
-      "message": "Levi is the coolest person I know."
-    },
-    {
-      "userId": 1,
-      "message": "Hello World!",
-      "id": 2
+      "message": "LEVI rules!!!",
+      "id": 1
     },
     {
       "userId": 2,
@@ -53,6 +48,21 @@
       "userId": 1,
       "message": "Where's Scooby Doo at today??",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "message": "Hello Again!! It's Tuesday!",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "message": "Hello!!!!!",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "message": "New Message",
+      "id": 7
     }
   ],
   "tasks": [
