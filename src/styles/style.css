@@ -1,4 +1,10 @@
-#news-card{
+#input-boxes{
     border-style: solid;
     padding: 5px
+}
+
+#news-container{
+    height: 20em;
+    width: 10em;
+    overflow: scroll
 }

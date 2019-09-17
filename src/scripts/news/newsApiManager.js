@@ -6,7 +6,7 @@ const newsApiManager = {
   },
 
   //Method to get one news article
-  getOneStudent: newsId => {
+  getOneNews: newsId => {
     return fetch(`http://localhost:8088/news/${newsId}`).then(response =>
       response.json()
     );
