@@ -4,6 +4,9 @@ import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
 import registerObject from "../registerFolder/register.js";
 
+
+//-------------EVENTS--------------------//
+
 eventApiManager.getAllEvents().then(parsedEvent => {
   eventDomPrinter.printEventsToDOM(parsedEvent);
 });
@@ -186,12 +189,15 @@ newsSaveButton.addEventListener("click", function () {
     const newsTitleValue = document.querySelector("#newsTitleInput").value;
     const newsSynopsisValue = document.querySelector("#newsSynopsisInput").value;
     const newsURLValue = document.querySelector("#newsURLInput").value
+    const timeValue = event.timeStamp
 
     // Conver the input to an object to send to json-server
     const newsObjectToPost = {
       title: newsTitleValue,
       synopsis: newsSynopsisValue,
-      url: newsURLValue
+      url: newsURLValue,
+      time: timeValue,
+      userId: 1
     };
 
     // POST  the news object to json-server and then refresh DOM to show all news articles
@@ -236,6 +242,7 @@ document.querySelector("body").addEventListener("click", () => {
     const editedNewsTitleValue = document.querySelector(`#edit-title-input-${editedNewsId}`).value
     const editedNewsSynopsisValue = document.querySelector(`#edit-synopsis-input-${editedNewsId}`).value
     const editedNewsURLValue = document.querySelector(`#edit-URL-input-${editedNewsId}`).value
+    const editedTimeValue = event.timeStamp
 
 
 
@@ -243,7 +250,8 @@ document.querySelector("body").addEventListener("click", () => {
     const editedNewsObjectToPut = {
       title: editedNewsTitleValue,
       synopsis: editedNewsSynopsisValue,
-      url: editedNewsURLValue
+      url: editedNewsURLValue,
+      time: editedTimeValue
     };
 
 

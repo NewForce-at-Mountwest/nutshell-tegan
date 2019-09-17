@@ -4,7 +4,7 @@ const newsDomPrinter = {
     printNewsToDOM: arrayOfNewsParam => {
         // Grab a reference to the output container
         document.querySelector("#news-container").innerHTML = ""
-        document.querySelector("#news-container").innerHTML = "<h2>News</h2>"
+        document.querySelector("#news-container").innerHTML = "<h2 id = title>News</h2>"
 
         // Loop through the array
         arrayOfNewsParam.forEach(singleNews => {
@@ -13,21 +13,18 @@ const newsDomPrinter = {
             document.querySelector("#news-container").innerHTML +=
         `<div id = "input-boxes">
             <div id = "news-card-${singleNews.id}">
-               <p>Title</p>
+               <p>Title:</p>
                <p> ${singleNews.title}</p>
-               <p>Synopsis</p>
+               <p>Synopsis:</p>
                <p> ${singleNews.synopsis}</p>
                <p>Article URL:</p>
                <p> ${singleNews.url}</p>
-               <p> ${singleNews.id}</p>
+
 
                 <button id="delete-news-${singleNews.id}">Delete</button>
                 <button id="edit-news-${singleNews.id}">Edit</button>
             </div>
         </div>`
-
-
-            console.log(singleNews.title)
         });
 
 
