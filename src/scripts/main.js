@@ -1,5 +1,8 @@
 import registerObject from "../registerFolder/register.js";
-import loginPage from "./logon/logon.js"
+import loginPage from "./login/login.js"
+import addClick from "./tasks/taskClickEvents.js"
+import clickEventLogin from "./login/clickEventLogin.js"
+
 
 import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
@@ -7,6 +10,17 @@ import eventDomPrinter from "./eventDomPrinter.js";
 eventApiManager.getAllEvents().then(parsedEvent => {
     eventDomPrinter.printEventsToDOM(parsedEvent);
 });
+
+// login handler
+loginPage();
+clickEventLogin.handleLogin();
+
+
+// tasks handler
+addClick.deleteClick()
+addClick.addNewTask()
+
+
 
 //listen for click on post button
 
@@ -80,10 +94,12 @@ document.querySelector("body").addEventListener("click", () => {
         // get the value of the username and email inputs
         const newUsernameValue = document.querySelector("#register-username-input").value;
         const newEmailValue = document.querySelector("#register-email-input").value;
-        // Put input values into a new object
+        const newUserPass = document.querySelector("#register-password-input").value
+            // Put input values into a new object
         const registerNewUserObject = {
                 name: newUsernameValue,
-                email: newEmailValue
+                email: newEmailValue,
+                password: newUserPass,
             }
             // console.log(registerNewUserObject)
             // POST new user to database
@@ -91,6 +107,7 @@ document.querySelector("body").addEventListener("click", () => {
             .then(() => {
                 document.querySelector("#register-username-input").value = "";
                 document.querySelector("#register-email-input").value = "";
+                document.querySelector("#register-password-input").value = "";
             })
     }
 });
