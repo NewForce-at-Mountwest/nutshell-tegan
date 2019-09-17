@@ -7,9 +7,9 @@ import clickEventLogin from "./login/clickEventLogin.js"
 import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
 
-eventApiManager.getAllEvents().then(parsedEvent => {
-    eventDomPrinter.printEventsToDOM(parsedEvent);
-});
+// eventApiManager.getAllEvents().then(parsedEvent => {
+//     eventDomPrinter.printEventsToDOM(parsedEvent);
+// });
 
 // login handler
 loginPage();
@@ -37,7 +37,7 @@ document.querySelector("body").addEventListener("click", () => {
     name: eventNameInput,
     date: eventDateInput,
     location: eventLocationInput,
-    userId: 1
+    userId: sessionStorage.getItem("userId")
   };
 
         //posting request

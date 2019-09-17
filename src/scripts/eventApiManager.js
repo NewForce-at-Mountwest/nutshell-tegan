@@ -1,6 +1,6 @@
 const eventApiManager = {
     getAllEvents: (userId) => {
-      return fetch("http://localhost:8088/events?userId=1").then(response =>
+      return fetch(`http://localhost:8088/event?userId=${userId}`).then(response =>
         response.json()
       )
     },
