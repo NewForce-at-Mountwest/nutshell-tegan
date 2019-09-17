@@ -24,6 +24,12 @@
       "name": "Sponge Bob",
       "email": "sponge1@gmail.com",
       "id": 5
+    },
+    {
+      "name": "kyle",
+      "email": "kyle",
+      "password": "1234",
+      "id": 7
     }
   ],
   "friends": [
@@ -129,12 +135,5 @@
       "id": 16
     }
   ],
-  "events": [
-    {
-      "name": "Give Levi your car keys.",
-      "date": "2019-09-16",
-      "location": "Huntington",
-      "id": 1
-    }
-  ]
+  "events": []
 }
