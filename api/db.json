@@ -24,6 +24,12 @@
       "name": "Sponge Bob",
       "email": "sponge1@gmail.com",
       "id": 5
+    },
+    {
+      "name": "kyle",
+      "email": "kyle",
+      "password": "1234",
+      "id": 7
     }
   ],
   "friends": [
