@@ -69,6 +69,11 @@
       "userId": 1,
       "message": "New Message",
       "id": 7
+    },
+    {
+      "userId": "7",
+      "message": "Kyle rules!!",
+      "id": 8
     }
   ],
   "tasks": [

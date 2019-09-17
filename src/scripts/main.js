@@ -181,15 +181,7 @@ document.querySelector("body").addEventListener("click", () => {
 
 
 // -------------------BEGIN MESSAGES/CHAT CODE------------------//
-// print new message form to dom
-messagesDomPrinter.printNewMessageFormToHTML();
-// print old messages to dom
-messageApiManager.getAllMessages().then(parsedMessages => {
-  // loop through the messages from json server
-  parsedMessages.forEach(message => {
-    messagesDomPrinter.printSingleMessage(message)
-  })
-});
+
 
 // collect form input values to create a new message in database
 // use doc.querySel to select input filed
@@ -199,7 +191,7 @@ document.querySelector("body").addEventListener("click", () => {
     const messageInput = document.querySelector("#message-text-input").value;
 
     const newMessage = {
-    userId: 1,
+    userId: sessionStorage.getItem("userId"),
     message: messageInput,
     };
     //   using POST method to create new json data
