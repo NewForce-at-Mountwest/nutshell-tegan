@@ -25,6 +25,7 @@ const clickEventLogin = {
                             document.querySelector("#login-container").innerHTML = ""
                                 // call functions for everyone else
                             afterLoad()
+                            
                         }
                     })
 
