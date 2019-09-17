@@ -2,13 +2,8 @@ import loginApiManager from "./loginApiManager.js"
 import buildLogin from "./loginDomPrint.js"
 import loginPage from "./login.js"
 import afterLoad from "../tasks/loadTaskContent.js"
-<<<<<<< HEAD
 import messageApiManager from "../messageApiManager.js"
 import messagesDomPrinter from "../messageDomPrinter.js"
-=======
-// import friendActivator from "../friends/friendActivator";
-
->>>>>>> master
 
 
 
@@ -32,7 +27,6 @@ const clickEventLogin = {
                             document.querySelector("#login-container").innerHTML = ""
                             // call functions for everyone else
                             afterLoad()
-<<<<<<< HEAD
                             // print new message form to dom
                             messagesDomPrinter.printNewMessageFormToHTML();
                             // print old messages to dom
@@ -42,10 +36,6 @@ const clickEventLogin = {
                                     messagesDomPrinter.printSingleMessage(message)
                                 })
                             });
-=======
-                                // friendActivator()
-
->>>>>>> master
                         }
                     })
 

@@ -56,12 +56,9 @@ addClick.deleteClick()
 addClick.addNewTask()
 
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> master
 //listen for click on post button
 
 document.querySelector("body").addEventListener("click", () => {
