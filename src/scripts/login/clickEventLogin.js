@@ -3,6 +3,8 @@ import buildLogin from "./loginDomPrint.js"
 import loginPage from "./login.js"
 import afterLoad from "../tasks/loadTaskContent.js"
 import eventAfterLoad from "../eventLoadContent.js"
+// import friendActivator from "../friends/friendActivator";
+
 
 
 
@@ -22,11 +24,13 @@ const clickEventLogin = {
                             alert("USERNAME/PASSWORD AIN'T REAL MY GUY")
                         } else if (password[0].password === userPasswordVal) {
                             console.log("Good Job My Guy YEET!")
-                            sessionStorage.setItem("userId", password[0])
+                            sessionStorage.setItem("userId", password[0].id)
                             document.querySelector("#login-container").innerHTML = ""
                                 // call functions for everyone else
                             afterLoad()
                             eventAfterLoad()
+                                // friendActivator()
+
                         }
                     })
 

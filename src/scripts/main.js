@@ -2,6 +2,7 @@ import registerObject from "../registerFolder/register.js";
 import loginPage from "./login/login.js"
 import addClick from "./tasks/taskClickEvents.js"
 import clickEventLogin from "./login/clickEventLogin.js"
+import friendActivator from "./friends/friendActivator.js";
 
 
 import eventApiManager from "./eventApiManager.js";
@@ -19,6 +20,8 @@ clickEventLogin.handleLogin();
 // tasks handler
 addClick.deleteClick()
 addClick.addNewTask()
+
+
 
 
 
