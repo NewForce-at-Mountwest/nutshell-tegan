@@ -5,6 +5,10 @@ import afterLoad from "../tasks/loadTaskContent.js"
 import eventAfterLoad from "../eventLoadContent.js"
 // import friendActivator from "../friends/friendActivator";
 
+import messageApiManager from "../messageApiManager.js"
+import messagesDomPrinter from "../messageDomPrinter.js"
+import newsApiManager from "../news/newsApiManager.js";
+import newsDomPrinter from "../news/newsDomPrinter.js";
 
 
 
@@ -26,11 +30,28 @@ const clickEventLogin = {
                             console.log("Good Job My Guy YEET!")
                             sessionStorage.setItem("userId", password[0].id)
                             document.querySelector("#login-container").innerHTML = ""
-                                // call functions for everyone else
+                            // call functions for everyone else
                             afterLoad()
                             eventAfterLoad()
                                 // friendActivator()
 
+                            // print new message form to dom
+                            messagesDomPrinter.printNewMessageFormToHTML();
+                            // print old messages to dom
+                            messageApiManager.getAllMessages().then(parsedMessages => {
+                                // loop through the messages from json server
+                                parsedMessages.forEach(message => {
+                                    messagesDomPrinter.printSingleMessage(message)
+
+
+                                })
+                            });
+                            //Fetch all news entries from JSON and print them to the DOM
+                            newsApiManager.getAllNews().then(parsedNews => {
+
+                                // When the response comes back, send them into the printToDOM function
+                                newsDomPrinter.printNewsToDOM(parsedNews);
+                            });
                         }
                     })
 

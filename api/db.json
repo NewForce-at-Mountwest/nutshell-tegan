@@ -32,10 +32,49 @@
       "id": 7
     },
     {
-      "name": "brittany",
-      "email": "brittany",
-      "password": "1234",
+      "name": "Dur",
+      "email": "dur@mail.com",
       "id": 8
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 16
     }
   ],
   "friends": [
@@ -47,9 +86,39 @@
   ],
   "messages": [
     {
-      "id": 1,
       "userId": 1,
-      "message": "Levi is the coolest person I know."
+      "message": "LEVI rules!!!",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "message": "It's Me!!",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "message": "Where's Scooby Doo at today??",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "message": "Hello Again!! It's Tuesday!",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "message": "Hello!!!!!",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "message": "New Message",
+      "id": 7
+    },
+    {
+      "userId": "7",
+      "message": "Kyle rules!!",
+      "id": 8
     }
   ],
   "tasks": [
@@ -59,29 +128,119 @@
       "task": "Give Levi a dollar."
     },
     {
-      "userId": "[object Object]",
-      "task": "asd",
-      "description": "asd",
-      "dueDate": "2019-09-03",
+      "userId": "7",
+      "task": "cer",
+      "description": "recec",
+      "dueDate": "2019-09-18",
       "complete": false,
       "id": 2
-    },
-    {
-      "userId": null,
-      "task": "qwe",
-      "description": "qwe",
-      "dueDate": "2019-09-09",
-      "complete": false,
-      "id": 3
     }
   ],
   "news": [
     {
       "id": 1,
       "userId": 1,
-      "url": "News Link 1",
-      "title": "News Title 1",
-      "synopsis": "News Synopsis 1"
+      "url": "https://www.herald-dispatch.com/news/school-testing-cabell-wayne-students-stay-above-state-averages/article_41b9e7eb-42d0-58fe-9caf-94cd45140dd4.html",
+      "title": "School testing: Cabell, Wayne students stay above state averages",
+      "synopsis": "Schools in Cabell and Wayne doing good"
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 5
+    },
+    {
+      "title": ":ergregf",
+      "synopsis": ":dvv",
+      "url": ":erfr",
+      "id": 6
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 7
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 8
+    },
+    {
+      "title": "edited title",
+      "synopsis": "edited synopsis",
+      "url": "edited url.com",
+      "time": 82314.06499999866,
+      "id": 9
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 10
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 11
+    },
+    {
+      "title": "Weekly Wanted | Huntington parole warrants",
+      "synopsis": "Folks on the run",
+      "url": "https://www.wsaz.com/content/news/Weekly-Wanted-Huntington-parole-warrants-521323861.html",
+      "id": 12
+    },
+    {
+      "title": "When to prune your winter mums with John Marra By Josie Fletcher | Posted: Fri 1:43 PM, Sep 13, 2019          HUNTINGTON, W.Va. (WSAZ) -- Former WSAZ Home and Garden Expert John Marra joined Katie and Sarah in Studio 3.   John Marra makes his debut on Studio 3. John says May 15th, June 15th, and July 15th are when you should prune your winter mums.  He also wants everyone to know about beginning beekeepers school at the Cabell County Career Technology Center. Classes are every Tuesday in October. For information on classes call: (304) 528-5108.   Get the latest updates from wsaz.com delivered to your browser  SUBSCRIBE TO PUSH NOTIFICATIONS Weekly Wanted | Huntington parole warrants Marco and Rufus battle for a Studio 3 mug",
+      "synopsis": "Prune your mums",
+      "url": "https://www.wsaz.com/content/news/When-to-prune-your-winter-mums-with-John-Marra-560249901.html",
+      "id": 13
+    },
+    {
+      "title": "Weekend Weather",
+      "synopsis": "Friday evening will see scattered clouds with a few pop-ups fading around sunset. However, Friday night will see a partly cloudy sky with scattered showers and thunderstorms redeveloping as lows fall to near 70 degrees.  On Saturday, the day starts with some clouds and lingering showers, mainly south and east. More sunshine can be expected for the afternoon for most locations, but areas near and especially in the mountains will see a re-firing of scattered showers and storms. High temperatures will not be quite as hot on Saturday but will still be on the warm side, rising to the low to mid 80s.  Sunday and Monday will see lots of sunshine with highs back in the low 90s. ",
+      "url": "https://www.wsaz.com/weather",
+      "id": 14
+    },
+    {
+      "title": "Felicity Huffman Is Sentenced In College Admissions Bribery Scam",
+      "synopsis": "rich lady pays for kid to get in school",
+      "url": "https://www.huffpost.com/entry/felicity-huffman-sentence-college-scandal_n_5d76bed8e4b0fde50c2b7e0d",
+      "id": 15
+    },
+    {
+      "title": "blah",
+      "synopsis": "wepfwfoijfwoij",
+      "url": "www.blah.com",
+      "time": 45383.850000000166,
+      "id": 16
+    },
+    {
+      "title": "Test",
+      "synopsis": "testing user id and time stamp",
+      "url": "weferf",
+      "time": 52065.0500000047,
+      "userId": "7",
+      "id": 17
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "time": 139122.74000000616,
+      "userId": "7",
+      "id": 18
+    },
+    {
+      "title": "testtttt",
+      "synopsis": "eeeerrrr",
+      "url": "poop",
+      "time": 74538.95000000193,
+      "userId": "7",
+      "id": 19
     }
   ],
   "events": [
@@ -90,19 +249,12 @@
       "date": "2019-09-18",
       "location": "Huntington",
       "userId": "7",
-      "id": 1
-    },
-    {
-      "name": "Give Levi $6.50 for his Schlotsky's original combo",
-      "date": "2019-09-18",
-      "location": "Huntington",
-      "userId": "7",
       "id": 2
     },
     {
-      "name": "1",
-      "date": "2019-09-18",
-      "location": "2",
+      "name": "",
+      "date": "",
+      "location": "",
       "userId": "7",
       "id": 3
     }
