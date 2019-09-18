@@ -4,6 +4,8 @@ import loginPage from "./login.js"
 import afterLoad from "../tasks/loadTaskContent.js"
 import messageApiManager from "../messageApiManager.js"
 import messagesDomPrinter from "../messageDomPrinter.js"
+import newsApiManager from "../news/newsApiManager.js";
+import newsDomPrinter from "../news/newsDomPrinter.js";
 
 
 
@@ -34,7 +36,15 @@ const clickEventLogin = {
                                 // loop through the messages from json server
                                 parsedMessages.forEach(message => {
                                     messagesDomPrinter.printSingleMessage(message)
+
+
                                 })
+                            });
+                            //Fetch all news entries from JSON and print them to the DOM
+                            newsApiManager.getAllNews().then(parsedNews => {
+
+                                // When the response comes back, send them into the printToDOM function
+                                newsDomPrinter.printNewsToDOM(parsedNews);
                             });
                         }
                     })
