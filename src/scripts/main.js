@@ -86,29 +86,29 @@ document.querySelector("body").addEventListener("click", () => {
           eventDomPrinter.printEventsToDOM(parsedEvent);
         });
     }
-    const eventNameInput = document.querySelector("#event-create-name").value;
-    const eventDateInput = document.querySelector("#event-create-date").value;
-    const eventLocationInput = document.querySelector("#event-create-location").value;
+    // const eventNameInput = document.querySelector("#event-create-name").value;
+    // const eventDateInput = document.querySelector("#event-create-date").value;
+    // const eventLocationInput = document.querySelector("#event-create-location").value;
 
     //create object to post
 
-    const eventToPost = {
-      name: eventNameInput,
-      date: eventDateInput,
-      location: eventLocationInput
-    };
+  //   const eventToPost = {
+  //     name: eventNameInput,
+  //     date: eventDateInput,
+  //     location: eventLocationInput
+  //   };
 
-    //posting request
+  //   //posting request
 
-    eventApiManager
-      .postOneEvent(eventToPost)
-      .then(eventApiManager.getAllEvents)
-      .then(parsedEvent => {
+  //   eventApiManager
+  //     .postOneEvent(eventToPost)
+  //     .then(eventApiManager.getAllEvents)
+  //     .then(parsedEvent => {
 
-        //re print the events
-        eventDomPrinter.printEventsToDOM(parsedEvent);
-      });
-  });
+  //       //re print the events
+  //       eventDomPrinter.printEventsToDOM(parsedEvent);
+  //     });
+   });
 
 
   //delete button
@@ -137,15 +137,15 @@ document.querySelector("body").addEventListener("click", () => {
           });
       });
     }
-    eventApiManager.deleteOneEvent(eventIdToDelete).then(() => {
-      eventApiManager.getAllEvents()
-        .then(parsedEvents => {
+    // eventApiManager.deleteOneEvent(eventIdToDelete).then(() => {
+    //   eventApiManager.getAllEvents()
+    //     .then(parsedEvents => {
 
-          //re print the events
+    //       //re print the events
 
-          eventDomPrinter.printEventsToDOM(parsedEvents);
-        });
-    });
+    //       eventDomPrinter.printEventsToDOM(parsedEvents);
+    //     });
+    // });
   })
 ;
 
@@ -357,7 +357,7 @@ document.querySelector("body").addEventListener("click", () => {
             synopsis: newsSynopsisValue,
             url: newsURLValue,
             time: timeValue,
-            userId: 1
+            userId: sessionStorage.getItem("userId")
           };
 
           // POST  the news object to json-server and then refresh DOM to show all news articles
@@ -411,7 +411,8 @@ document.querySelector("body").addEventListener("click", () => {
             title: editedNewsTitleValue,
             synopsis: editedNewsSynopsisValue,
             url: editedNewsURLValue,
-            time: editedTimeValue
+            time: editedTimeValue,
+            userId: sessionStorage.getItem("userId")
           };
 
 
@@ -453,8 +454,8 @@ document.querySelector("body").addEventListener("click", () => {
             }
           })
         })
-      eventDomPrinter.printEventsToDOM(allEvents)
-              eventDomPrinter.printEventsToDOM(allEvents);
+      // eventDomPrinter.printEventsToDOM(allEvents)
+      //         eventDomPrinter.printEventsToDOM(allEvents);
 
 
 

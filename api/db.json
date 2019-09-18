@@ -30,6 +30,11 @@
       "email": "kyle",
       "password": "1234",
       "id": 7
+    },
+    {
+      "name": "Dur",
+      "email": "dur@mail.com",
+      "id": 8
     }
   ],
   "friends": [
@@ -172,6 +177,30 @@
       "url": "www.blah.com",
       "time": 45383.850000000166,
       "id": 16
+    },
+    {
+      "title": "Test",
+      "synopsis": "testing user id and time stamp",
+      "url": "weferf",
+      "time": 52065.0500000047,
+      "userId": "7",
+      "id": 17
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "time": 139122.74000000616,
+      "userId": "7",
+      "id": 18
+    },
+    {
+      "title": "testtttt",
+      "synopsis": "eeeerrrr",
+      "url": "poop",
+      "time": 74538.95000000193,
+      "userId": "7",
+      "id": 19
     }
   ],
   "events": []

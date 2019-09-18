@@ -5,13 +5,13 @@ const newsDomPrinter = {
         // Grab a reference to the output container
         document.querySelector("#news-container").innerHTML = ""
         document.querySelector("#news-container").innerHTML = "<h2 id = title>News</h2>"
-
+        debugger
         // Loop through the array
         arrayOfNewsParam.forEach(singleNews => {
 
             //  print a p tag for each news item to the DOM
             document.querySelector("#news-container").innerHTML +=
-        `<div id = "input-boxes">
+                `<div id = "input-boxes">
             <div id = "news-card-${singleNews.id}">
                <p>Title:</p>
                <p> ${singleNews.title}</p>

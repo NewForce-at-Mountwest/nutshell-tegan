@@ -1,7 +1,11 @@
+//import clickEventLogin from "./login/clickEventLogin"
+
+
+
 const newsApiManager = {
   // Method to get all news articles
   getAllNews: () => {
-    return fetch("http://localhost:8088/news")
+        return fetch(`http://localhost:8088/news?userId=${sessionStorage.getItem("userId")}`)
       .then(response => response.json())
   },
 

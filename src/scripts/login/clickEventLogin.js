@@ -37,11 +37,14 @@ const clickEventLogin = {
                                 parsedMessages.forEach(message => {
                                     messagesDomPrinter.printSingleMessage(message)
                                     //Fetch all news entries from JSON and print them to the DOM
-                                    newsApiManager.getAllNews().then(parsedNews => {
-                                        // When the response comes back, send them into the printToDOM function
-                                        newsDomPrinter.printNewsToDOM(parsedNews);
-                                    });
+
                                 })
+                            });
+
+                            newsApiManager.getAllNews().then(parsedNews => {
+                                debugger
+                                // When the response comes back, send them into the printToDOM function
+                                newsDomPrinter.printNewsToDOM(parsedNews);
                             });
                         }
                     })
