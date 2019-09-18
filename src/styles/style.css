@@ -1,3 +1,43 @@
+#input-boxes{
+    border-style: solid;
+    padding: 2px;
+    border-width: 1px
+}
+
+#news-container{
+    height: 30em;
+    width: 28vw;
+    overflow: scroll;
+    border-style: solid;
+    padding: 2px;
+    border-width: 1px
+
+}
+
+#main-flex-container{
+    display: flex;
+    justify-content: center;
+    background-color: bisque
+}
+
+#login-container{
+    display: flex;
+    justify-content: center
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+}
+
+#event-container{
+    height: 30em;
+    width: 28vw;
+    overflow: scroll;
+    border-style: solid;
+    padding: 2px;
+    border-width: 1px
+}
 #chat-container {
     border: 1px solid black;
     margin: 1em;
