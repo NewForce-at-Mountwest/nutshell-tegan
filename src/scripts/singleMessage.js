@@ -6,7 +6,7 @@ const messageHtmlBuilder = {
       return `
         <div class="message-card"
         <section id="message-card-${singleMessage.id}">
-          <p>${singleMessage.userId}:${singleMessage.message}</p>
+          <p>${singleMessage.user.name}:${singleMessage.message}</p>
           <button id="delete-message-${singleMessage.id}">Delete</button>
           <button id="edit-message-${singleMessage.id}">Edit</button>
         </section>

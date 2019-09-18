@@ -464,7 +464,7 @@ document.querySelector("body").addEventListener("click", () => {
 
 
 // collect form input values to create a new message in database
-// use doc.querySel to select input filed
+// use doc.querySel to select message input field
 // use value property on inputs to get text that you typed
 document.querySelector("body").addEventListener("click", () => {
     if(event.target.id === "message-save-btn"){
@@ -474,7 +474,7 @@ document.querySelector("body").addEventListener("click", () => {
     userId: sessionStorage.getItem("userId"),
     message: messageInput
     };
-    //   using POST method to create new json data
+    //   using POST method to create new json data in messages
 // fetch to create the new message in the api
 messageApiManager.saveMessage(newMessage)
 .then(messageApiManager.getAllMessages)
@@ -489,7 +489,7 @@ messageApiManager.saveMessage(newMessage)
     }
 })
 
-// click event for delete button
+// click event for message delete button
 // add event listener to the body element bc the delete button does not exist upon page load
 document.querySelector("body").addEventListener("click", () => {
     // if user clicks on delete button, then things happen
@@ -513,7 +513,7 @@ document.querySelector("body").addEventListener("click", () => {
     }
 })
 
-// event listener for edit button
+// event listener for message edit button
 document.querySelector("body").addEventListener("click", () => {
     if(event.target.id.includes("edit-message")){
         const wordArray = event.target.id.split("-");
@@ -527,7 +527,7 @@ document.querySelector("body").addEventListener("click", () => {
     }
 });
 
-// event listener for the edit save button
+// event listener for the message edit save button
 document.querySelector("body").addEventListener("click", () => {
     if(event.target.id.includes("editedmessage-save")){
         const wordArray = event.target.id.split("-");

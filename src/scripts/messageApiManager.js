@@ -3,7 +3,7 @@
 const messageApiManager = {
     getAllMessages: () => {
         // fetch messages from json server and parse them to js
-        return fetch("http://localhost:8088/messages")
+        return fetch("http://localhost:8088/messages?_expand=user")
         .then(response => response.json());
     },
     getOneMessage: messageId => {
