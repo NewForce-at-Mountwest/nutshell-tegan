@@ -35,6 +35,46 @@
       "name": "Dur",
       "email": "dur@mail.com",
       "id": 8
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 16
     }
   ],
   "friends": [
@@ -203,5 +243,13 @@
       "id": 19
     }
   ],
-  "events": []
+  "events": [
+    {
+      "name": "Give Levi your car keys",
+      "date": "2019-09-18",
+      "location": "Huntington!!!!!",
+      "userId": "7",
+      "id": 2
+    }
+  ]
 }
