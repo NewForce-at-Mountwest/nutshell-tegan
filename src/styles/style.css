@@ -39,10 +39,13 @@
     border-width: 1px
 }
 #chat-container {
-    border: 1px solid black;
     margin: 1em;
     padding: 1em;
     height: 30em;
     width: 28vw;
     overflow: scroll
+}
+
+#register-account-container {
+    padding: 1em
 }

@@ -3,26 +3,31 @@
     {
       "id": 1,
       "name": "Johnny",
-      "email": "email@gmail.com"
+      "email": "email@gmail.com",
+      "password": "1234"
     },
     {
       "id": 2,
       "name": "Joshua",
-      "email": "josh@gmail.com"
+      "email": "josh@gmail.com",
+      "password": "1234"
     },
     {
       "name": "jess",
       "email": "email@gmail.com",
+      "password": "1234",
       "id": 3
     },
     {
       "name": "ryan122",
       "email": "ryan122@gmail.com",
+      "password": "1234",
       "id": 4
     },
     {
       "name": "Sponge Bob",
       "email": "sponge1@gmail.com",
+      "password": "1234",
       "id": 5
     },
     {
@@ -32,6 +37,7 @@
       "id": 7
     },
     {
+      "password": "1234",
       "name": "Dur",
       "email": "dur@mail.com",
       "id": 8
@@ -91,7 +97,7 @@
       "id": 1
     },
     {
-      "userId": 2,
+      "userId": 7,
       "message": "It's Me!!",
       "id": 3
     },
@@ -101,23 +107,18 @@
       "id": 4
     },
     {
-      "userId": 1,
-      "message": "Hello Again!! It's Tuesday!",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "message": "Hello!!!!!",
+      "userId": "4",
+      "message": "It's me Ryan122!",
       "id": 6
     },
     {
-      "userId": 1,
-      "message": "New Message",
+      "userId": "7",
+      "message": "Y'ALL absolutely ROCK!!! Everything is AWESOME!!!!!!!! WOOOHOOOOO!!!",
       "id": 7
     },
     {
-      "userId": "7",
-      "message": "Kyle rules!!",
+      "userId": "2",
+      "message": "Hey This is JOSH! Where yall at???",
       "id": 8
     }
   ],
@@ -250,6 +251,13 @@
       "location": "Huntington!!!!!",
       "userId": "7",
       "id": 2
+    },
+    {
+      "name": "Don't give LEVI your car keys!!!",
+      "date": "2019-09-18",
+      "location": "nope",
+      "userId": "7",
+      "id": 3
     }
   ]
 }
