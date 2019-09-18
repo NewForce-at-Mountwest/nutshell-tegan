@@ -1,4 +1,3 @@
-
 import loginPage from "./login/login.js"
 import addClick from "./tasks/taskClickEvents.js"
 import clickEventLogin from "./login/clickEventLogin.js"
@@ -11,6 +10,7 @@ import registerObject from "./register.js";
 import messagesDomPrinter from "./messageDomPrinter.js";
 import messageApiManager from "./messageApiManager.js";
 import messageDomPrinter from "./messageDomPrinter.js";
+
 
 
 
@@ -54,6 +54,7 @@ clickEventLogin.handleLogin();
 // tasks handler
 addClick.deleteClick()
 addClick.addNewTask()
+    // friendActivator()
 
 
 
@@ -177,10 +178,10 @@ document.querySelector("body").addEventListener("click", () => {
 
                         //re print all the events
 
-              eventDomPrinter.printEventsToDOM(allEvents)
-          })
-      })
-  }
+                        eventDomPrinter.printEventsToDOM(allEvents)
+                    })
+            })
+    }
 });
 
 
@@ -191,25 +192,25 @@ document.querySelector("body").addEventListener("click", () => {
 // use doc.querySel to select input filed
 // use value property on inputs to get text that you typed
 document.querySelector("body").addEventListener("click", () => {
-    if(event.target.id === "message-save-btn"){
-    const messageInput = document.querySelector("#message-text-input").value;
+    if (event.target.id === "message-save-btn") {
+        const messageInput = document.querySelector("#message-text-input").value;
 
-    const newMessage = {
-    userId: sessionStorage.getItem("userId"),
-    message: messageInput,
-    };
-    //   using POST method to create new json data
-// fetch to create the new message in the api
-messageApiManager.saveMessage(newMessage)
-.then(messageApiManager.getAllMessages)
-.then(parsedMessages => {
-    document.querySelector("#chat-container").innerHTML = ""
-    messageDomPrinter.printNewMessageFormToHTML()
-    // loop through messages from json server
-    parsedMessages.forEach(message => {
-        messageDomPrinter.printSingleMessage(message)
-    });
-    });
+        const newMessage = {
+            userId: sessionStorage.getItem("userId"),
+            message: messageInput,
+        };
+        //   using POST method to create new json data
+        // fetch to create the new message in the api
+        messageApiManager.saveMessage(newMessage)
+            .then(messageApiManager.getAllMessages)
+            .then(parsedMessages => {
+                document.querySelector("#chat-container").innerHTML = ""
+                messageDomPrinter.printNewMessageFormToHTML()
+                    // loop through messages from json server
+                parsedMessages.forEach(message => {
+                    messageDomPrinter.printSingleMessage(message)
+                });
+            });
     }
 })
 
@@ -217,7 +218,7 @@ messageApiManager.saveMessage(newMessage)
 // add event listener to the body element bc the delete button does not exist upon page load
 document.querySelector("body").addEventListener("click", () => {
     // if user clicks on delete button, then things happen
-    if(event.target.id.includes("delete-message")) {
+    if (event.target.id.includes("delete-message")) {
         // get the unique id of the entry you want to delete
         // remember that we gave our delete buttons id attributes of delete-message-uniqueId
         const wordArray = event.target.id.split("-");
@@ -239,7 +240,7 @@ document.querySelector("body").addEventListener("click", () => {
 
 // event listener for edit button
 document.querySelector("body").addEventListener("click", () => {
-    if(event.target.id.includes("edit-message")){
+    if (event.target.id.includes("edit-message")) {
         const wordArray = event.target.id.split("-");
         const idOfThingWeWantToEdit = wordArray[2];
         console.log(idOfThingWeWantToEdit)
@@ -253,24 +254,24 @@ document.querySelector("body").addEventListener("click", () => {
 
 // event listener for the edit save button
 document.querySelector("body").addEventListener("click", () => {
-    if(event.target.id.includes("editedmessage-save")){
+    if (event.target.id.includes("editedmessage-save")) {
         const wordArray = event.target.id.split("-");
         const idOfThingWeWantToEdit = wordArray[3];
         console.log(idOfThingWeWantToEdit);
         // get the value of the input
         const editedMessageValue = document.querySelector(`#message-text-${idOfThingWeWantToEdit}`).value
-        // put the input value into an object
+            // put the input value into an object
         const editedMessageObject = {
-            userId: 1,
-            message: editedMessageValue
-        }
-        // send to the db with the PUT method
+                userId: 1,
+                message: editedMessageValue
+            }
+            // send to the db with the PUT method
         messageApiManager.editOneMessage(idOfThingWeWantToEdit, editedMessageObject).then(() => {
             // once the edit is completed, get all messages again
             messageApiManager.getAllMessages().then(parsedMessages => {
                 document.querySelector("#chat-container").innerHTML = ""
                 messageDomPrinter.printNewMessageFormToHTML()
-                // loop through the messages from json server
+                    // loop through the messages from json server
                 parsedMessages.forEach(message => {
                     messageDomPrinter.printSingleMessage(message)
                 });

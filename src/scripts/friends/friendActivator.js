@@ -1,14 +1,14 @@
-// import buildFriends from "./friendBuilder";
-// import friendFormBuilder from "./friendFormBuilder";
-// import friendManager from "./friendManager";
+import buildFriends from "./friendBuilder";
+import friendFormBuilder from "./friendFormBuilder";
+import friendManager from "./friendManager";
 
-// const friendActivator = () => {
-//     const activeUser = sessionStorage.getItem("activeUser")
+const friendActivator = () => {
+    const activeUser = sessionStorage.getItem("activeUser")
 
-//     buildFriends(activeUser)
-//     friendFormBuilder();
-//     friendManager();
+    buildFriends(activeUser)
+    friendFormBuilder();
+    friendManager();
 
-// }
+}
 
-// export default friendActivator;
+export default friendActivator;
