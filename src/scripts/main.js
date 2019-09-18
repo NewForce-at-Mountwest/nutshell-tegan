@@ -196,7 +196,7 @@ document.querySelector("body").addEventListener("click", () => {
 
     const newMessage = {
     userId: sessionStorage.getItem("userId"),
-    message: messageInput,
+    message: messageInput
     };
     //   using POST method to create new json data
 // fetch to create the new message in the api

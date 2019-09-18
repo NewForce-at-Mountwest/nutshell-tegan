@@ -1,8 +1,9 @@
+import messageApiManager from "./messageApiManager";
 
 // HTML string for individual message
 const messageHtmlBuilder = {
     buildSingleMessage: (singleMessage) => {
-        return `
+      return `
         <div class="message-card"
         <section id="message-card-${singleMessage.id}">
           <p>${singleMessage.userId}:${singleMessage.message}</p>

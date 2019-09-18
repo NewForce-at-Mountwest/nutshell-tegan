@@ -3,26 +3,31 @@
     {
       "id": 1,
       "name": "Johnny",
-      "email": "email@gmail.com"
+      "email": "email@gmail.com",
+      "password": "1234"
     },
     {
       "id": 2,
       "name": "Joshua",
-      "email": "josh@gmail.com"
+      "email": "josh@gmail.com",
+      "password": "1234"
     },
     {
       "name": "jess",
       "email": "email@gmail.com",
+      "password": "1234",
       "id": 3
     },
     {
       "name": "ryan122",
       "email": "ryan122@gmail.com",
+      "password": "1234",
       "id": 4
     },
     {
       "name": "Sponge Bob",
       "email": "sponge1@gmail.com",
+      "password": "1234",
       "id": 5
     },
     {
@@ -30,6 +35,12 @@
       "email": "kyle",
       "password": "1234",
       "id": 7
+    },
+    {
+      "name": "Rosco",
+      "email": "rg@gmail.com",
+      "password": "1234",
+      "id": 8
     }
   ],
   "friends": [
@@ -46,7 +57,7 @@
       "id": 1
     },
     {
-      "userId": 2,
+      "userId": 7,
       "message": "It's Me!!",
       "id": 3
     },
@@ -56,24 +67,14 @@
       "id": 4
     },
     {
-      "userId": 1,
-      "message": "Hello Again!! It's Tuesday!",
+      "userId": "7",
+      "message": "Yep!",
       "id": 5
     },
     {
-      "userId": 1,
-      "message": "Hello!!!!!",
+      "userId": "4",
+      "message": "It's me Ryan122!",
       "id": 6
-    },
-    {
-      "userId": 1,
-      "message": "New Message",
-      "id": 7
-    },
-    {
-      "userId": "7",
-      "message": "Kyle rules!!",
-      "id": 8
     }
   ],
   "tasks": [
