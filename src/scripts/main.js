@@ -91,28 +91,7 @@ document.querySelector("body").addEventListener("click", () => {
                 eventDomPrinter.printEventsToDOM(parsedEvents);
             });
     }
-    // const eventNameInput = document.querySelector("#event-create-name").value;
-    // const eventDateInput = document.querySelector("#event-create-date").value;
-    // const eventLocationInput = document.querySelector("#event-create-location").value;
 
-    //create object to post
-
-  //   const eventToPost = {
-  //     name: eventNameInput,
-  //     date: eventDateInput,
-  //     location: eventLocationInput
-  //   };
-
-  //   //posting request
-
-  //   eventApiManager
-  //     .postOneEvent(eventToPost)
-  //     .then(eventApiManager.getAllEvents)
-  //     .then(parsedEvent => {
-
-  //       //re print the events
-  //       eventDomPrinter.printEventsToDOM(parsedEvent);
-  //     });
    });
 
 
@@ -239,120 +218,46 @@ const registerNewUserObject = {
 
 document.querySelector("body").addEventListener("click", () => {
 
-  //see if clicked on an edit button
-
-  if (event.target.id.includes("event-edit")) {
-    const wordArray = event.target.id.split("-");
-    const eventIdToEdit = wordArray[2];
-
-    //get the info from selected event
-
-    eventApiManager.getOneEvent(eventIdToEdit)
-      .then(singleEvent => {
-
-        //print input field for editing event
-
-        eventDomPrinter.printEventEditForm(singleEvent)
-        if (event.target.id.includes("event-edit")) {
-          const wordArray = event.target.id.split("-");
-          const eventIdToEdit = wordArray[2];
-
-          //get the info from selected event
-
-          eventApiManager.getOneEvent(eventIdToEdit)
-            .then(singleEvent => {
-
-              //print input field for editing event
-
-              eventDomPrinter.printEventEditForm(singleEvent)
-
-
-            })
-
-        }
-      })
-    }
-  }
-)
-
-    //edit save button
-
-    document.querySelector("body").addEventListener("click", () => {
-
-      //make sure button is an event save button
-
-      if (event.target.id.includes("event-save-edit")) {
-
-        //get button id
-
+    if (event.target.id.includes("event-edit-form")) {
         const wordArray = event.target.id.split("-");
         const eventIdToEdit = wordArray[3];
-
+        //get the info from selected event
+        eventApiManager.getOneEvent(eventIdToEdit)
+            .then(singleEvent => {
+                //print input field for editing event
+                eventDomPrinter.printEventEditForm(singleEvent)
+            })
+    }
+})
+//edit save button
+document.querySelector("body").addEventListener("click", () => {
+    //make sure button is an event save button
+    if (event.target.id.includes("event-edit-save")) {
+        //get button id
+        const wordArray = event.target.id.split("-");
+        const eventIdToEdit = wordArray[3];
         //get the edited input value
-
         const eventNameInputValue = document.querySelector(`#event-name-edit-input-${eventIdToEdit}`).value
         const eventDateInputValue = document.querySelector(`#event-date-edit-input-${eventIdToEdit}`).value
         const eventLocationInputValue = document.querySelector(`#event-location-edit-input-${eventIdToEdit}`).value
         //create an object to make put request
-
         const editedEventObject = {
             name: eventNameInputValue,
             date: eventDateInputValue,
             location: eventLocationInputValue,
             userId: sessionStorage.getItem("userId")
         }
-
         //create put reqeust
-
         eventApiManager.editOneEvent(eventIdToEdit, editedEventObject)
-          .then(() => {
-            eventApiManager.getAllEvents()
-              .then(allEvents => {
-                //make sure button is an event save button
-
-                if (event.target.id.includes("event-save-edit")) {
-
-                  //get button id
-
-                  const wordArray = event.target.id.split("-");
-                  const eventIdToEdit = wordArray[3];
-
-                  //get the edited input value
-
-                  const eventNameInputValue = document.querySelector(`#event-name-edit-input-${eventIdToEdit}`).value
-                  const eventDateInputValue = document.querySelector(`#event-date-edit-input-${eventIdToEdit}`).value
-                  const eventLocationInputValue = document.querySelector(`#event-location-edit-input-${eventIdToEdit}`).value
-
-                  //create an object to make put request
-
-                  const editedEventObject = {
-                    name: eventNameInputValue,
-                    date: eventDateInputValue,
-                    location: eventLocationInputValue,
-                    userId: (sessionStorage.getItem("userId"))
-                  }
-
-                  //create put reqeust
-
-                  eventApiManager.editOneEvent(eventIdToEdit, editedEventObject)
-                    .then(() => {
-                      eventApiManager.getAllEvents()
-                        .then(allEvents => {
-
-                          //re print all the events
-
-                          eventDomPrinter.printEventsToDOM(allEvents)
-                        })
+            .then(() => {
+                eventApiManager.getAllEvents(sessionStorage.getItem("userId"))
+                    .then(allEvents => {
+                        //re print all the events
+                        eventDomPrinter.printEventsToDOM(allEvents)
                     })
-                }
-              })
-          })
-      }
+            })
     }
-  )
-
-
-
+})
 
       //--------------NEWS-----------------------//
 

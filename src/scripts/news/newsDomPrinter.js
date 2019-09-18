@@ -5,6 +5,7 @@ const newsDomPrinter = {
         // Grab a reference to the output container
         document.querySelector("#news-container").innerHTML = ""
         document.querySelector("#news-container").innerHTML = "<h2 id = title>News</h2>"
+
         // Loop through the array
         arrayOfNewsParam.forEach(singleNews => {
 
@@ -68,6 +69,5 @@ const newsDomPrinter = {
         </section>`
     }
 }
-
 
 export default newsDomPrinter

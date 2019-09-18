@@ -19,7 +19,7 @@ const eventDomPrinter = {
         <p>${singleEvent.location}</p>
         <div class="event-button-container">
         <button id="event-delete-${singleEvent.id}">Delete</button>
-        <button id="event-edit-${singleEvent.id}">Edit</button>
+        <button id="event-edit-form-${singleEvent.id}">Edit</button>
         </div>
         </li>
         `;
@@ -31,7 +31,7 @@ const eventDomPrinter = {
         <label>Name:</label><input id="event-name-edit-input-${eventIdToEdit.id}" type="text" value="${eventIdToEdit.name}">
         <label>Date:</label><input id="event-date-edit-input-${eventIdToEdit.id}" type="date" value="${eventIdToEdit.date}">
         <label>Location:</label><input id="event-location-edit-input-${eventIdToEdit.id}" type="text" value="${eventIdToEdit.location}">
-        <button id="event-save-edit-${eventIdToEdit.id}">Save</button>
+        <button id="event-edit-save-${eventIdToEdit.id}">Save</button>
         </div>
       </section>`
 
