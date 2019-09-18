@@ -81,6 +81,14 @@
       "id": 1,
       "userId": 1,
       "task": "Give Levi a dollar."
+    },
+    {
+      "userId": "7",
+      "task": "cer",
+      "description": "recec",
+      "dueDate": "2019-09-18",
+      "complete": false,
+      "id": 2
     }
   ],
   "news": [
@@ -116,9 +124,10 @@
       "id": 8
     },
     {
-      "title": ":wefwef",
-      "synopsis": ":sdcsc",
-      "url": ":vwsfwef",
+      "title": "edited title",
+      "synopsis": "edited synopsis",
+      "url": "edited url.com",
+      "time": 82314.06499999866,
       "id": 9
     },
     {

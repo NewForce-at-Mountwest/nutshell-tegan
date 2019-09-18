@@ -1,28 +1,13 @@
 import newsApiManager from "./news/newsApiManager.js";
 import newsDomPrinter from "./news/newsDomPrinter.js";
-import registerObject from "../registerFolder/register.js";
+import registerObject from "../scripts/register";
 import loginPage from "./login/login.js";
 import addClick from "./tasks/taskClickEvents.js";
 import clickEventLogin from "./login/clickEventLogin.js";
 import eventApiManager from "./eventApiManager.js";
 import eventDomPrinter from "./eventDomPrinter.js";
-
-
-
-
-
-
-
-import loginPage from "./login/login.js"
-import addClick from "./tasks/taskClickEvents.js"
-import clickEventLogin from "./login/clickEventLogin.js"
 import friendActivator from "./friends/friendActivator.js";
-
-
-import eventApiManager from "./eventApiManager.js";
-import eventDomPrinter from "./eventDomPrinter.js";
-import registerObject from "./register.js";
-import messagesDomPrinter from "./messageDomPrinter.js";
+//import messagesDomPrinter from "./messageDomPrinter.js";
 import messageApiManager from "./messageApiManager.js";
 import messageDomPrinter from "./messageDomPrinter.js";
 
@@ -355,16 +340,6 @@ document.querySelector("body").addEventListener("click", () => {
 
       //--------------NEWS-----------------------//
 
-
-      //Fetch all news entries from JSON and print them to the DOM
-      newsApiManager.getAllNews().then(parsedNews => {
-        // When the response comes back, send them into the printToDOM function
-        newsDomPrinter.printNewsToDOM(parsedNews);
-      });
-
-
-
-
       //-----------Saving News Articles to the Database-------------//
       const newsSaveButton = document.querySelector("body");
       // Add an event listener to the submit button
@@ -483,7 +458,7 @@ document.querySelector("body").addEventListener("click", () => {
 
 
 
-              
+
 // -------------------BEGIN MESSAGES/CHAT CODE------------------//
 
 
