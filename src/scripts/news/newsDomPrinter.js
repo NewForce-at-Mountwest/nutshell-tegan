@@ -70,5 +70,4 @@ const newsDomPrinter = {
     }
 }
 
-
 export default newsDomPrinter
