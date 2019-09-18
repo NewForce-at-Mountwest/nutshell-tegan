@@ -36,22 +36,23 @@ document.querySelector("body").addEventListener("click", () => {
 
         //create object to post
 
-  const eventToPost = {
-    name: eventNameInput,
-    date: eventDateInput,
-    location: eventLocationInput,
-    userId: sessionStorage.getItem("userId")
-  };
+        const eventToPost = {
+            name: eventNameInput,
+            date: eventDateInput,
+            location: eventLocationInput,
+            userId: sessionStorage.getItem("userId")
+        };
+
 
         //posting request
 
         eventApiManager
             .postOneEvent(eventToPost)
-            .then(eventApiManager.getAllEvents)
-            .then(parsedEvent => {
+            .then(() => eventApiManager.getAllEvents(sessionStorage.getItem("userId")))
+            .then(parsedEvents => {
 
                 //re print the events
-                eventDomPrinter.printEventsToDOM(parsedEvent);
+                eventDomPrinter.printEventsToDOM(parsedEvents);
             });
     }
 });
@@ -72,7 +73,7 @@ document.querySelector("body").addEventListener("click", () => {
         //delete request
 
         eventApiManager.deleteOneEvent(eventIdToDelete).then(() => {
-            eventApiManager.getAllEvents()
+            eventApiManager.getAllEvents(sessionStorage.getItem("userId"))
                 .then(parsedEvents => {
 
                     //re print the events
@@ -99,14 +100,14 @@ document.querySelector("body").addEventListener("click", () => {
         const newUsernameValue = document.querySelector("#register-username-input").value;
         const newEmailValue = document.querySelector("#register-email-input").value;
         const newUserPass = document.querySelector("#register-password-input").value
-            // Put input values into a new object
+        // Put input values into a new object
         const registerNewUserObject = {
-                name: newUsernameValue,
-                email: newEmailValue,
-                password: newUserPass,
-            }
-            // console.log(registerNewUserObject)
-            // POST new user to database
+            name: newUsernameValue,
+            email: newEmailValue,
+            password: newUserPass,
+        }
+        // console.log(registerNewUserObject)
+        // POST new user to database
         registerObject.postNewUser(registerNewUserObject)
             .then(() => {
                 document.querySelector("#register-username-input").value = "";
@@ -120,16 +121,16 @@ loginPage();
 const newUsernameValue = document.querySelector("#register-username-input").value;
 const newEmailValue = document.querySelector("#register-email-input").value;
 const registerNewUserObject = {
-        name: newUsernameValue,
-        email: newEmailValue
-    }
-    // registerObject.postNewUser(registerNewUserObject)
-    // .then(() => {
-    //     document.querySelector("#register-username-input").value = "";
-    //     document.querySelector("#register-email-input").value = "";
-    // })
-    // }
-    // });
+    name: newUsernameValue,
+    email: newEmailValue
+}
+// registerObject.postNewUser(registerNewUserObject)
+// .then(() => {
+//     document.querySelector("#register-username-input").value = "";
+//     document.querySelector("#register-email-input").value = "";
+// })
+// }
+// });
 
 
 //edit button
@@ -172,23 +173,23 @@ document.querySelector("body").addEventListener("click", () => {
 
         //get the edited input value
 
-      const eventNameInputValue = document.querySelector(`#event-name-edit-input-${eventIdToEdit}`).value
-      const eventDateInputValue = document.querySelector(`#event-date-edit-input-${eventIdToEdit}`).value
-      const eventLocationInputValue = document.querySelector(`#event-location-edit-input-${eventIdToEdit}`).value
-//create an object to make put request
+        const eventNameInputValue = document.querySelector(`#event-name-edit-input-${eventIdToEdit}`).value
+        const eventDateInputValue = document.querySelector(`#event-date-edit-input-${eventIdToEdit}`).value
+        const eventLocationInputValue = document.querySelector(`#event-location-edit-input-${eventIdToEdit}`).value
+        //create an object to make put request
 
-      const editedEventObject = {
-          name: eventNameInputValue,
-          date: eventDateInputValue,
-          location: eventLocationInputValue,
-          userId: 1
-      }
+        const editedEventObject = {
+            name: eventNameInputValue,
+            date: eventDateInputValue,
+            location: eventLocationInputValue,
+            userId: sessionStorage.getItem("userId")
+        }
 
         //create put reqeust
 
         eventApiManager.editOneEvent(eventIdToEdit, editedEventObject)
             .then(() => {
-                eventApiManager.getAllEvents()
+                eventApiManager.getAllEvents(sessionStorage.getItem("userId"))
                     .then(allEvents => {
 
                         //re print all the events

@@ -1,107 +1,110 @@
 {
-    "users": [{
-            "id": 1,
-            "name": "Johnny",
-            "email": "email@gmail.com"
-        },
-        {
-            "id": 2,
-            "name": "Joshua",
-            "email": "josh@gmail.com"
-        },
-        {
-            "name": "jess",
-            "email": "email@gmail.com",
-            "id": 3
-        },
-        {
-            "name": "ryan122",
-            "email": "ryan122@gmail.com",
-            "id": 4
-        },
-        {
-            "name": "Sponge Bob",
-            "email": "sponge1@gmail.com",
-            "id": 5
-        },
-        {
-            "name": "kyle",
-            "email": "kyle",
-            "password": "1234",
-            "id": 7
-        },
-        {
-            "name": "brittany",
-            "email": "brittany",
-            "password": "1234",
-            "id": 8
-        }
-    ],
-    "friends": [{
-        "id": 1,
-        "userId": 1,
-        "otherFriendId": 2
-    }],
-    "messages": [{
-        "id": 1,
-        "userId": 1,
-        "message": "Levi is the coolest person I know."
-    }],
-    "tasks": [{
-            "id": 1,
-            "userId": 1,
-            "task": "Give Levi a dollar."
-        },
-        {
-            "userId": "[object Object]",
-            "task": "asd",
-            "description": "asd",
-            "dueDate": "2019-09-03",
-            "complete": false,
-            "id": 2
-        },
-        {
-            "userId": null,
-            "task": "qwe",
-            "description": "qwe",
-            "dueDate": "2019-09-09",
-            "complete": false,
-            "id": 3
-        }
-    ],
-    "news": [{
-        "id": 1,
-        "userId": 1,
-        "url": "News Link 1",
-        "title": "News Title 1",
-        "synopsis": "News Synopsis 1"
-    }],
-    "events": [ {
-      "name": "Give Levi your car keys.",
-      "userId": 1,
-      "date": "2019-09-16",
-      "location": "Huntington",
-      "id": 1
+  "users": [
+    {
+      "id": 1,
+      "name": "Johnny",
+      "email": "email@gmail.com"
     },
     {
-      "name": "tell levi how cool he is.",
-      "userId": 2,
-      "date": "2019-09-16",
-      "location": "Huntington",
-      "id": 2
+      "id": 2,
+      "name": "Joshua",
+      "email": "josh@gmail.com"
     },
     {
-      "name": "userid1",
-      "date": "2019-09-17",
-      "location": "huntington",
-      "userId": 1,
+      "name": "jess",
+      "email": "email@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "ryan122",
+      "email": "ryan122@gmail.com",
       "id": 4
     },
     {
-      "name": "userid7",
-      "date": "2019-09-17",
-      "location": "huntington",
-      "userId": 7,
+      "name": "Sponge Bob",
+      "email": "sponge1@gmail.com",
       "id": 5
-    }]
+    },
+    {
+      "name": "kyle",
+      "email": "kyle",
+      "password": "1234",
+      "id": 7
+    },
+    {
+      "name": "brittany",
+      "email": "brittany",
+      "password": "1234",
+      "id": 8
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": 1,
+      "otherFriendId": 2
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "message": "Levi is the coolest person I know."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "Give Levi a dollar."
+    },
+    {
+      "userId": "[object Object]",
+      "task": "asd",
+      "description": "asd",
+      "dueDate": "2019-09-03",
+      "complete": false,
+      "id": 2
+    },
+    {
+      "userId": null,
+      "task": "qwe",
+      "description": "qwe",
+      "dueDate": "2019-09-09",
+      "complete": false,
+      "id": 3
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "userId": 1,
+      "url": "News Link 1",
+      "title": "News Title 1",
+      "synopsis": "News Synopsis 1"
+    }
+  ],
+  "events": [
+    {
+      "name": "Give Levi your car keys",
+      "date": "2019-09-18",
+      "location": "Huntington",
+      "userId": "7",
+      "id": 1
+    },
+    {
+      "name": "Give Levi $6.50 for his Schlotsky's original combo",
+      "date": "2019-09-18",
+      "location": "Huntington",
+      "userId": "7",
+      "id": 2
+    },
+    {
+      "name": "1",
+      "date": "2019-09-18",
+      "location": "2",
+      "userId": "7",
+      "id": 3
+    }
+  ]
 }
